@@ -2,14 +2,14 @@
     "name": "sveltekit-snippets",
     "displayName": "sveltekit-snippets",
     "description": "Snippets for SvelteKit",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "stordahl",
     "repository": {
         "type": "git",
         "url": "https://github.com/stordahl/sveltekit-snippets.git"
     },
     "engines": {
-        "vscode": "^1.60.0"
+        "vscode": "^1.59.0"
     },
     "categories": [
         "Snippets"
@@ -17,7 +17,7 @@
     "contributes": {
         "snippets": [
             {
-                "language": "javascript",
+                "language": "svelte, javascript",
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
