@@ -2,7 +2,7 @@
     "name": "sveltekit-snippets",
     "displayName": "sveltekit-snippets",
     "description": "Snippets for SvelteKit",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "stordahl",
     "repository": {
         "type": "git",
@@ -17,7 +17,15 @@
     "contributes": {
         "snippets": [
             {
-                "language": "svelte, javascript",
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "svelte",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "html",
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
