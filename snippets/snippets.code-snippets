@@ -1,0 +1,192 @@
+{
+  "Svelte Component": {
+		"prefix": "kitComp",
+    "scope": "svelte",
+		"description": "Scaffold a Svelte component",
+		"body": [
+			"<script>",
+			"$0",
+			"</script>",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]		
+	},
+	"Svelte TypeScript Component": {
+		"prefix": "kitCompTs",
+    "scope": "svelte",
+		"description": "Scaffold a TypeScript Svelte component",
+		"body": [
+			"<script lang=ts>",
+			"\t $0",
+			"</script>",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]		
+	},
+	"SvelteKit Module Component": {
+		"prefix": "kitModule",
+    "scope": "svelte",
+		"description": "Scaffold a SvelteKit module component for a page",
+		"body": [
+			"<script context=module>",
+			"\t $0",
+			"</script>",
+			"<script>",
+			"",
+			"</script>",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]
+	},
+	"SvelteKit TypeScript Module Component": {
+		"prefix": "kitModuleTs",
+    "scope": "svelte",
+		"description": "Scaffold a SvelteKit module component for a page",
+		"body": [
+			"<script lang=ts context=module>",
+			"\t $0",
+			"</script>",
+			"<script>",
+			"",
+			"</script",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]
+	},
+	"SvelteKit Layout Component": {
+		"prefix": "kitLayout",
+    "scope": "svelte",
+		"description": "Scaffold a SvelteKit layout component",
+		"body": [
+			"<script>",
+			"\t $0",
+			"</script>",
+			"",
+			"<main>",
+			"  <slot/>",
+			"</main",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]
+	},
+	"Svelte Prefetch": {
+		"prefix": "kitPrefetch",
+    "scope": "svelte, html",
+		"description": "Create sveltekit:prefetch anchor tag",
+		"body": ["<a sveltekit:prefetch href='${1:url}'>${2:text}</a>"]
+	},
+	"Svelte Each Block": {
+		"prefix": "kitEach",
+    "scope": "svelte",
+		"description": "Create a Svelte #each block",
+		"body": [
+			"{#each ${1:array} as ${2:element} }",
+			"\t",
+			"{/each}"
+		]
+	},
+	"Svelte If Block": {
+		"prefix": "kitIf",
+    "scope": "svelte",
+		"description": "Create a Svelte #if block",
+		"body": [
+			"{#if ${1:condition} }",
+			"\t",
+			"{/if}"
+		]
+	},
+	"Svelte Await Block": {
+		"prefix": "kitAwait",
+    "scope": "svelte",
+		"description": "Create a Svelte #await block",
+		"body": [
+			"{#await ${1:expression} }",
+			"\t",
+			"{:then ${2:name} }",
+			"\t",
+			"{:catch ${3:name} }",
+			"\t",
+			"{/await}"
+		]
+	},
+	"Svelte Key Block": {
+		"prefix": "kitKey",
+    "scope": "svelte",
+		"description": "Create a Svelte #key block",
+		"body": [
+			"{#key ${1:expression} }",
+			"\t",
+			"{/key}"
+		]
+	},
+	"Svelte Page Title": {
+		"prefix": "kitTitle",
+    "scope": "svelte",
+		"description": "Create a title element in the document head",
+		"body": [
+			"<svelte:head>",
+			"\t<title>${TM_FILENAME_BASE}</title>",
+			"</svelte:head>"
+		]
+	},
+  "SvelteKit Load Function": {
+		"prefix": "kitLoad",
+    "scope": "javascript",
+		"description": "Create a SvelteKit Load function",
+		"body": [
+		"/**",
+		" * @type {import('@sveltejs/kit').Load}",
+		" */",
+		"export async function load({ page, fetch, session, context }) {",
+		"  const url = `${1:api}`;",
+		"  const res = await fetch(url);",
+		"",
+		"if (res.ok) {",
+		"  return {",
+		"    props: {",
+		"       ${2:propName}: await res.json()",
+		"    }",
+		"  };",
+		"}",
+		"",
+		"return {",
+		"  status: res.status,",
+		"    error: new Error(`Could not load ${url}`)",
+		"  };",
+		"}"
+		]
+	},
+	"SvelteKit Endpoint": {
+		"prefix": "kitEndpoint",
+    "scope": "javascript",
+		"description": "Create a SvelteKit Endpoint",
+		"body": [
+		"/**",
+ 		"* @type {import('@sveltejs/kit').RequestHandler}",
+ 		"*/",
+		"export const ${1:method} = async ({ params }) => {",
+		"  const { ${TM_FILENAME_BASE} } = params;",
+		"",
+		"  const res = await ${2:something};",
+		"",
+		"  if (res) {",
+		"    return {",
+		"      body: {",
+		"        res",
+		"      }",
+		"    };",
+		"  }",
+		"}"
+		]
+	},
+}
