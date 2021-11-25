@@ -2,8 +2,12 @@
     "name": "sveltekit-snippets",
     "displayName": "sveltekit-snippets",
     "description": "Snippets for SvelteKit",
-    "version": "0.0.5",
+    "version": "1.0.0",
+    "icon": "images/icon.png",
     "publisher": "stordahl",
+    "scripts": {
+        "build": "vsce package"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/stordahl/sveltekit-snippets.git"
@@ -32,7 +36,9 @@
                 "language": "markdown",
                 "path": "./snippets/snippets.code-snippets"
             }
-
         ]
+    },
+    "devDependencies": {
+        "vsce": "^2.5.0"
     }
 }
