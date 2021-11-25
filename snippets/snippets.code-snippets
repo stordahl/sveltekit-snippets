@@ -1,7 +1,7 @@
 {
   "Svelte Component": {
 		"prefix": "kitComp",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Scaffold a Svelte component",
 		"body": [
 			"<script>",
@@ -15,7 +15,7 @@
 	},
 	"Svelte TypeScript Component": {
 		"prefix": "kitCompTs",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Scaffold a TypeScript Svelte component",
 		"body": [
 			"<script lang=ts>",
@@ -29,7 +29,7 @@
 	},
 	"SvelteKit Module Component": {
 		"prefix": "kitModule",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit module component for a page",
 		"body": [
 			"<script context=module>",
@@ -46,7 +46,7 @@
 	},
 	"SvelteKit TypeScript Module Component": {
 		"prefix": "kitModuleTs",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit module component for a page",
 		"body": [
 			"<script lang=ts context=module>",
@@ -63,7 +63,7 @@
 	},
 	"SvelteKit Layout Component": {
 		"prefix": "kitLayout",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit layout component",
 		"body": [
 			"<script>",
@@ -81,7 +81,7 @@
 	},
 	"Svelte Prefetch": {
 		"prefix": "kitPrefetch",
-    "scope": "svelte, html, md",
+    "scope": "svelte, html, markdown",
 		"description": "Create sveltekit:prefetch anchor tag",
 		"body": ["<a sveltekit:prefetch href='${1:url}'>${2:text}</a>"]
 	},
@@ -97,7 +97,7 @@
 	},
 	"Svelte If Block": {
 		"prefix": "kitIf",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Create a Svelte #if block",
 		"body": [
 			"{#if ${1:condition} }",
@@ -107,7 +107,7 @@
 	},
 	"Svelte Await Block": {
 		"prefix": "kitAwait",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Create a Svelte #await block",
 		"body": [
 			"{#await ${1:expression} }",
@@ -121,7 +121,7 @@
 	},
 	"Svelte Key Block": {
 		"prefix": "kitKey",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Create a Svelte #key block",
 		"body": [
 			"{#key ${1:expression} }",
@@ -131,7 +131,7 @@
 	},
 	"Svelte Page Title": {
 		"prefix": "kitTitle",
-    "scope": "svelte, md",
+    "scope": "svelte, markdown",
 		"description": "Create a title element in the document head",
 		"body": [
 			"<svelte:head>",
@@ -141,7 +141,7 @@
 	},
   "SvelteKit Load Function": {
 		"prefix": "kitLoad",
-    "scope": "javascript, md",
+    "scope": "javascript, markdown",
 		"description": "Create a SvelteKit Load function",
 		"body": [
 		"/**",
@@ -168,7 +168,7 @@
 	},
 	"SvelteKit Endpoint": {
 		"prefix": "kitEndpoint",
-    "scope": "javascript, md",
+    "scope": "javascript, markdown",
 		"description": "Create a SvelteKit Endpoint",
 		"body": [
 		"/**",
