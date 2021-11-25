@@ -1,12 +1,13 @@
+![sveltekit-snippets icon](https://github.com/stordahl/sveltekit-snippets/blob/master/images/icon.png)
+    
 # sveltekit-snippets
 
 The extension provides snippets for common patterns in SvelteKit &amp; Vanilla Svelte including...
-
 - Components
 - Logic Blocks
 - Endpoints
 - Load Functions
-
+    
 All snippets are prefixed with "kit" for brevity and scoped only for their appropriate placement in the Svelte component
 
 ## Snippets
@@ -26,6 +27,16 @@ All snippets are prefixed with "kit" for brevity and scoped only for their appro
 |  kitTitle   | Create a title element in the document head |
 |   kitLoad   | Create a SvelteKit Load function |
 | kitEndpoint | Create a SvelteKit Endpoint |
+
+## Troubleshooting
+
+ - To enable intellisense in MD files for use with MDSvex, add the following JSON to your global settings.json
+ ```json
+  "[markdown]": {
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false
+  },
+ ```
 
 ## Issues
 
