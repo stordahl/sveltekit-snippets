@@ -29,4 +29,4 @@ All snippets are prefixed with "kit" for brevity and scoped only for their appro
 
 ## Issues
 
-Issues are welcome and encouraged! Please describe the issue as thuroughly as you can – Contribution guidelines are forthcoming.
+Issues are welcome and encouraged! Please describe the issue as thoroughly as you can – Contribution guidelines are forthcoming.
