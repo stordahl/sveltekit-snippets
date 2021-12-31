@@ -52,7 +52,7 @@
 			"<script lang=ts context=module>",
 			"\t $0",
 			"</script>",
-			"<script>",
+			"<script lang=ts>",
 			"",
 			"</script>",
 			"",
