@@ -1,10 +1,20 @@
 # Change Log
 
-All notable changes to the "sveltekit-snippets" extension will be documented in this file.
+All notable changes to the "sveltekit-snippets" extension will be documented here.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [Unreleased]
+
+## [1.1.0] - 2021-12-31
+### Added
+- TypeScript Endpoints via `kitTsEndpoint`
+
+### Changed
+- Removed `{ params }` from Endpoints boilerplate
+
+### Fixed
+- Adds `lang=ts` to normal script tag when using `kitModuleTs`
 
 ## [1.0.0] - 2021-11-23
 ### Initial Features
