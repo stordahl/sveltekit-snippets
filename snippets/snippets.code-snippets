@@ -141,13 +141,13 @@
 	},
   "SvelteKit Load Function": {
 		"prefix": "kitLoad",
-    "scope": "javascript, markdown",
+    "scope": "svelte, javascript, markdown",
 		"description": "Create a SvelteKit Load function",
 		"body": [
 		"/**",
 		" * @type {import('@sveltejs/kit').Load}",
 		" */",
-		"export async function load({ page, fetch, session, context }) {",
+		"export async function load({ params, url, fetch, session, context }) {",
 		"  const url = `${1:api}`;",
 		"  const res = await fetch(url);",
 		"",
