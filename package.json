@@ -2,7 +2,7 @@
     "name": "sveltekit-snippets",
     "displayName": "sveltekit-snippets",
     "description": "Snippets for SvelteKit",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "icon": "images/icon.png",
     "publisher": "stordahl",
     "scripts": {
