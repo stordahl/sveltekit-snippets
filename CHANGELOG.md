@@ -6,6 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.1.1] - 2021-01-13
+### Fixed
+- Addresses breaking changes in SvelteKit's load function
+- Adds 'contributes' metadate for TS to allow snippet use in .ts files
+
 ## [1.1.0] - 2021-12-31
 ### Added
 - TypeScript Endpoints via `kitTsEndpoint`
