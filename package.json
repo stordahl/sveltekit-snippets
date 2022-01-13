@@ -25,6 +25,10 @@
                 "path": "./snippets/snippets.code-snippets"
             },
             {
+                "language": "typescript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
                 "language": "svelte",
                 "path": "./snippets/snippets.code-snippets"
             },
