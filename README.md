@@ -26,6 +26,7 @@ All snippets are prefixed with "kit" for brevity and scoped only for their appro
 |    kitKey   | Create a Svelte `{#key}` block |
 |  kitTitle   | Create a title element in the document head |
 |   kitLoad   | Create a SvelteKit Load function |
+|  kitLoadTs  | Create a SvelteKit TypeScript Load function |
 | kitEndpoint | Create a SvelteKit Endpoint |
 | kitTsEndpoint | Create a SvelteKit TypeScript Endpoint |
 

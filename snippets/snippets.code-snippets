@@ -1,7 +1,7 @@
 {
   "Svelte Component": {
 		"prefix": "kitComp",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Scaffold a Svelte component",
 		"body": [
 			"<script>",
@@ -15,7 +15,7 @@
 	},
 	"Svelte TypeScript Component": {
 		"prefix": "kitCompTs",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Scaffold a TypeScript Svelte component",
 		"body": [
 			"<script lang=ts>",
@@ -29,7 +29,7 @@
 	},
 	"SvelteKit Module Component": {
 		"prefix": "kitModule",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit module component for a page",
 		"body": [
 			"<script context=module>",
@@ -46,7 +46,7 @@
 	},
 	"SvelteKit TypeScript Module Component": {
 		"prefix": "kitModuleTs",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit module component for a page",
 		"body": [
 			"<script lang=ts context=module>",
@@ -63,7 +63,7 @@
 	},
 	"SvelteKit Layout Component": {
 		"prefix": "kitLayout",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Scaffold a SvelteKit layout component",
 		"body": [
 			"<script>",
@@ -81,13 +81,13 @@
 	},
 	"Svelte Prefetch": {
 		"prefix": "kitPrefetch",
-    "scope": "svelte, html, markdown",
+    	"scope": "svelte, html, markdown",
 		"description": "Create sveltekit:prefetch anchor tag",
 		"body": ["<a sveltekit:prefetch href='${1:url}'>${2:text}</a>"]
 	},
 	"Svelte Each Block": {
 		"prefix": "kitEach",
-    "scope": "svelte",
+    	"scope": "svelte",
 		"description": "Create a Svelte #each block",
 		"body": [
 			"{#each ${1:array} as ${2:element} }",
@@ -97,7 +97,7 @@
 	},
 	"Svelte If Block": {
 		"prefix": "kitIf",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Create a Svelte #if block",
 		"body": [
 			"{#if ${1:condition} }",
@@ -107,7 +107,7 @@
 	},
 	"Svelte Await Block": {
 		"prefix": "kitAwait",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Create a Svelte #await block",
 		"body": [
 			"{#await ${1:expression} }",
@@ -121,7 +121,7 @@
 	},
 	"Svelte Key Block": {
 		"prefix": "kitKey",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Create a Svelte #key block",
 		"body": [
 			"{#key ${1:expression} }",
@@ -131,7 +131,7 @@
 	},
 	"Svelte Page Title": {
 		"prefix": "kitTitle",
-    "scope": "svelte, markdown",
+    	"scope": "svelte, markdown",
 		"description": "Create a title element in the document head",
 		"body": [
 			"<svelte:head>",
@@ -141,26 +141,53 @@
 	},
   "SvelteKit Load Function": {
 		"prefix": "kitLoad",
-    "scope": "svelte, javascript, markdown",
+    	"scope": "svelte, javascript, markdown",
 		"description": "Create a SvelteKit Load function",
 		"body": [
-		"/**",
-		" * @type {import('@sveltejs/kit').Load}",
-		" */",
-		"export async function load({ params, url, fetch, session, context }) {",
+		"/** @type {import('@sveltejs/kit').Load} */",
+		"export const load = async ({ url, params, props, fetch, session, stuff, status, error }) => {",
 		"  const resourceUrl = `${1:api}`;",
 		"  const res = await fetch(resourceUrl);",
 		"",
-		"if (res.ok) {",
-		"  return {",
-		"    props: {",
-		"       ${2:propName}: await res.json()",
-		"    }",
-		"  };",
-		"}",
+		"  if (res.ok) {",
+		"    return {",
+		"      status: res.status,",
+		"      props: {",
+		"         ${2:propName}: await res.json()",
+		"      }",
+		"    };",
+		"  }",
 		"",
-		"return {",
-		"  status: res.status,",
+		"  return {",
+		"    status: res.status,",
+		"    error: new Error(`Could not load ${url}`)",
+		"  };",
+		"}"
+		]
+	},
+	"SvelteKit TypeScript Load Function": {
+		"prefix": "kitLoadTs",
+    	"scope": "svelte, javascript, markdown",
+		"description": "Create a SvelteKit TypeScript Load function",
+		"body": [
+		"import type { Load } from '@sveltejs/kit';",
+		"",
+		"/** @type {import('@sveltejs/kit').Load} */",
+		"export const load: Load = async ({ url, params, props, fetch, session, stuff, status, error }) => {",
+		"  const resourceUrl = `${1:api}`;",
+		"  const res = await fetch(resourceUrl);",
+		"",
+		"  if (res.ok) {",
+		"    return {",
+		"      status: res.status,",
+		"      props: {",
+		"         ${2:propName}: await res.json()",
+		"      }",
+		"    };",
+		"  }",
+		"",
+		"  return {",
+		"    status: res.status,",
 		"    error: new Error(`Could not load ${url}`)",
 		"  };",
 		"}"
@@ -168,14 +195,11 @@
 	},
 	"SvelteKit Endpoint": {
 		"prefix": "kitEndpoint",
-    "scope": "javascript, markdown",
+    	"scope": "javascript, markdown",
 		"description": "Create a SvelteKit Endpoint",
 		"body": [
-		"/**",
- 		"* @type {import('@sveltejs/kit').RequestHandler}",
- 		"*/",
-		"export const ${1:method} = async () => {",
-		"",
+		"/** @type {import('@sveltejs/kit').RequestHandler} */",
+		"export const ${1|get,post,put,patch,del|} = async ({ clientAddress, locals, params, platform, request, routeId, url }) => {",
 		"  const res = await ${2:something};",
 		"",
 		"  if (res) {",
@@ -190,14 +214,13 @@
 	},
 	"SvelteKit TypeScript Endpoint": {
 		"prefix": "kitTsEndpoint",
-    "scope": "typescript, markdown",
+    	"scope": "typescript, markdown",
 		"description": "Create a SvelteKit Typescript Endpoint",
 		"body": [
-		"/**",
- 		"* @type {import('@sveltejs/kit').RequestHandler}",
- 		"*/",
-		"export const ${1:method} = async ():Promise<{ body: ${2: returnType} }> => {",
+		"import type { RequestHandler } from '@sveltejs/kit';",
 		"",
+		"/** @type {import('@sveltejs/kit').RequestHandler} */",
+		"export const ${1|get,post,put,patch,del|}: RequestHandler = async ({ clientAddress, locals, params, platform, request, routeId, url }):Promise<{ body: { [key: string]: ${2: returnType} } }> => {",
 		"  const res:${2: returnType} = await ${3:something};",
 		"",
 		"  if (res) {",
